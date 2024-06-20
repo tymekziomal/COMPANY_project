@@ -322,7 +322,7 @@ def assign_customers_to_companies(companies_list, customers_list):
         customers = companies_customer.get(company_name, [])
         if customers:
             for customer in customers:
-                print(f" imie: {customer['name']} ,nazwisko: {customer['surname']} ,(Korzysta z uslug w {customer['my_company']})")
+                print(f" imie: {customer['name']} ,nazwisko: {customer['surname']} ,Korzysta z uslug w ({customer['my_company']})")
         else:
             print("Brak klientów w firmie.")
         print()
@@ -342,7 +342,7 @@ def assign_employees_to_companies(companies_list, employees_list):
         employees = companies_employee.get(company_name, [])
         if employees:
             for employee in employees:
-                print(f" imie: {employee['name']} ,nazwisko: {employee['surname']} ,(Pracuje w {employee['workplace']})")
+                print(f" imie: {employee['name']} ,nazwisko: {employee['surname']} ,Pracuje w ({employee['workplace']})")
         else:
             print("Brak pracownikow w firmie.")
         print()
