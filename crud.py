@@ -37,6 +37,8 @@ def add_new_customer(customers: list[dict]) -> None:
     new_surname: str = input("Nowe nazwisko klienta: ")
     add_new_location = input("Podaj miejscowosc: ")
     new_my_company = input("Wpisz firme do ktorej nalezysz")
+
+
     coordinates = get_coordinates(add_new_location)
 
     if coordinates:
@@ -168,10 +170,7 @@ from bs4 import BeautifulSoup
 
 
 def get_coordinates(location):
-    """
-    Function to get coordinates of foundations, donors, employee
-    :return: list of coordinates of foundations, donors, employee
-    """
+
     url: str = f"https://pl.wikipedia.org/wiki/{location}"
     response = requests.get(url)
     response_html = BeautifulSoup(response.text, "html.parser")
