@@ -312,8 +312,8 @@ def assign_customers_to_companies(companies_list, customers_list):
     companies_customer = {company['name']: [] for company in companies_list}
 
     for customer in customers_list:
-        my_company = customer['my_company']
-        if my_company in companies_customer:
+        my_company = customer.get('my_company')
+        if my_company and my_company in companies_customer:
             companies_customer[my_company].append(customer)
 
     for company in companies_list:
@@ -332,8 +332,8 @@ def assign_employees_to_companies(companies_list, employees_list):
     companies_employee = {company['name']: [] for company in companies_list}
 
     for employee in employees_list:
-        workplace = employee['workplace']
-        if workplace in companies_employee:
+        workplace = employee.get("workplace")
+        if workplace and workplace in companies_employee:
             companies_employee[workplace].append(employee)
 
     for company in companies_list:
