@@ -56,16 +56,6 @@ def add_new_employee(employees_list) -> None:
     new_workplace = input("Wpisz nazwe firmy w ktorej nalezysz ")
     coordinates = get_coordinates(add_new_location)
 
-    if new_workplace := False:
-        for new_workplace in employees_list:
-            if new_workplace['name'] == new_workplace:
-                new_workplace = True
-                break
-
-    new_workplace = any(company['name'] == new_workplace for company in employees_list)
-
-    if not new_workplace:
-        print("Nie można dodać pracownika. Firma nie istnieje.")
 
     if coordinates:
         new_latitude, new_longitude = coordinates
